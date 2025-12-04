@@ -1,0 +1,1 @@
+sudo rm -r /etc/systemd/system/upload.service
