@@ -78,7 +78,7 @@ def upload_video(logger, trans_id, post_transid, images_path, video_path, custom
         if customer_trans == 'False':
             url = "{}/loyalty/upload-media/cv?media_event_type=TECHNICIAN_MODE&invoice_id={}".format(base_url,post_transid)
             headers = {"Authorization": "Bearer {}".format(access_token)}
-            response_media = requests.post(url, files = {'file':fileobj}, headers=headers)
+            # response_media = requests.post(url, files = {'file':fileobj}, headers=headers)
         else:
             # if products_count >= 3:
             #     url = "https://ist873mo99.execute-api.us-west-2.amazonaws.com/prod/upload"
