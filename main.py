@@ -234,6 +234,9 @@ class CameraPreview:
         self.cleanup()
 
     def handle_door_opened(self):
+        if self.door_opened:
+           self.logger.warning(f"Ignoring duplicate DoorOpened. Active transid={self.transid}")
+           return
         self.transid = self.recv["parm1"].split(":")[0]
         self.is_customer_trans = self.recv["parm1"].split(":")[1]
         self.logger.info('\n')
